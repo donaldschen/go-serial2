@@ -137,7 +137,7 @@ func makeTermios2(options OpenOptions) (*termios2, error) {
 	return t2, nil
 }
 
-func openInternal(options OpenOptions) (io.ReadWriteCloser, error) {
+func openInternal(options OpenOptions) (retFile io.ReadWriteCloser, retErr error) {
 
 	file, openErr :=
 		os.OpenFile(
@@ -147,6 +147,11 @@ func openInternal(options OpenOptions) (io.ReadWriteCloser, error) {
 	if openErr != nil {
 		return nil, openErr
 	}
+	defer func() {
+		if retErr != nil {
+			file.Close()
+		}
+	}()
 
 	t2, optErr := makeTermios2(options)
 	if optErr != nil {
