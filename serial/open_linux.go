@@ -25,9 +25,9 @@ import (
 // }
 //
 const (
-	kTCSETS2 = 0x402C542B
-	kBOTHER  = 0x1000
-	kNCCS    = 19
+	kTCSETS2 = unix.TCSETS2
+	kBOTHER  = unix.BOTHER
+	kNCCS    = unix.NCCS
 )
 
 //
