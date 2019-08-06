@@ -27,7 +27,6 @@ import (
 const (
 	kTCSETS2 = unix.TCSETS2
 	kBOTHER  = unix.BOTHER
-	kNCCS    = unix.NCCS
 )
 
 //
@@ -38,14 +37,14 @@ type cc_t byte
 type speed_t uint32
 type tcflag_t uint32
 type termios2 struct {
-	c_iflag  tcflag_t    // input mode flags
-	c_oflag  tcflag_t    // output mode flags
-	c_cflag  tcflag_t    // control mode flags
-	c_lflag  tcflag_t    // local mode flags
-	c_line   cc_t        // line discipline
+	c_iflag  tcflag_t   // input mode flags
+	c_oflag  tcflag_t   // output mode flags
+	c_cflag  tcflag_t   // control mode flags
+	c_lflag  tcflag_t   // local mode flags
+	c_line   cc_t       // line discipline
 	c_cc     [kNCCS]cc_t // control characters
-	c_ispeed speed_t     // input speed
-	c_ospeed speed_t     // output speed
+	c_ispeed speed_t    // input speed
+	c_ospeed speed_t    // output speed
 }
 
 // Constants for RS485 operation
