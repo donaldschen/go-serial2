@@ -10,10 +10,15 @@ add support for other architectures.
 OS support
 ----------
 
-Currently this package works only on OS X, Linux and Windows. It could probably be ported
+Currently this package works on OS X, Linux and Windows. It could probably be ported
 to other Unix-like platforms simply by updating a few constants; get in touch if
 you are interested in helping and have hardware to test with.
 
+Linux support
+-------------
+
+* amd64
+* mips
 
 Installation
 ------------
