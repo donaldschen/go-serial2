@@ -1,7 +1,10 @@
-go-serial
+go-serial2
 =========
 
 This is a package that allows you to read from and write to serial ports in Go.
+
+This package was forked from jacobsa/go-serial with the intent of continuing its development to
+add support for other architectures.
 
 
 OS support
@@ -17,11 +20,11 @@ Installation
 
 Simply use `go get`:
 
-    go get github.com/jacobsa/go-serial/serial
+    go get github.com/chmorgan/go-serial2/serial
 
 To update later:
 
-    go get -u github.com/jacobsa/go-serial/serial
+    go get -u github.com/chmorgan/go-serial2/serial
 
 
 Use
@@ -32,7 +35,7 @@ Set up a `serial.OpenOptions` struct, then call `serial.Open`. For example:
 ````go
     import "fmt"
     import "log"
-    import "github.com/jacobsa/go-serial/serial"
+    import "github.com/chmorgan/go-serial2/serial"
 
     ...
 
